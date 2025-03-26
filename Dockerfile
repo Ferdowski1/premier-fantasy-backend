@@ -1,14 +1,15 @@
-# Use lightweight Java image
 FROM eclipse-temurin:21-jdk-alpine
 
-# Set working directory
 WORKDIR /app
 
-# Copy the built JAR file into the container
-COPY target/premier-zone-0.0.1-SNAPSHOT.jar app.jar
+# Copy the source code
+COPY . .
 
-# Expose the port your app runs on
+# Build the app inside the container
+RUN ./mvnw clean package -DskipTests
+
+# Expose port 8080
 EXPOSE 8080
 
-# Start the app
-ENTRYPOINT ["java", "-jar", "app.jar"]
+# Run the built JAR
+CMD ["java", "-jar", "target/premier-zone-0.0.1-SNAPSHOT.jar"]
