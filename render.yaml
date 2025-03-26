@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: premier-fantasy-backend
+    env: java
+    buildCommand: "./mvnw clean package"
+    startCommand: "java -jar target/premier-zone-0.0.1-SNAPSHOT.jar"
+    branch: main
+    plan: free
