@@ -30,6 +30,8 @@ public class Player {
     public Player() {}
 
     // Getters and Setters
+    public Long getId() { return id; }
+    
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
 
