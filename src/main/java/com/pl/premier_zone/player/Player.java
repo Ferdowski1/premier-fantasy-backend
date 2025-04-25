@@ -1,9 +1,13 @@
 package com.pl.premier_zone.player;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "all_players_data")
+@Table(name = "players")
 public class Player {
 
     @Id
